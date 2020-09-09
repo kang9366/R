@@ -1,2 +1,2 @@
 # R
-Studying data analysis with R
+Studying data analysis and visualization with R
