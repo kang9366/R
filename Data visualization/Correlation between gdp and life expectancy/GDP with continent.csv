@@ -1,0 +1,189 @@
+﻿Country Name,Country Code,Continent,GDP,OECD
+Aruba,ABW,South America,25630.26649,FALSE
+Afghanistan,AFG,Africa,520.8966027,FALSE
+Angola,AGO,Africa,3432.385736,FALSE
+Albania,ALB,Europe,5268.848504,FALSE
+United Arab Emirates,ARE,Middle East,43004.95336,FALSE
+Argentina,ARG,South America,11683.94962,FALSE
+Armenia,ARM,Europe,4212.070943,FALSE
+Antigua and Barbuda,ATG,South America,16726.98081,FALSE
+Australia,AUS,Oceania,57373.68668,TRUE
+Austria,AUT,Europe,51461.95478,TRUE
+Azerbaijan,AZE,Europe,4721.178087,FALSE
+Burundi,BDI,Africa,271.7520444,FALSE
+Belgium,BEL,Europe,47518.63604,TRUE
+Benin,BEN,Africa,901.5438712,FALSE
+Burkina Faso,BFA,Africa,715.122904,FALSE
+Bangladesh,BGD,Asia,1698.262802,FALSE
+Bulgaria,BGR,Europe,9272.629304,FALSE
+Bahrain,BHR,Asia,24050.75751,FALSE
+"Bahamas, The",BHS,North America,32217.87159,FALSE
+Bosnia and Herzegovina,BIH,Europe,6065.672708,FALSE
+Belarus,BLR,Europe,6289.938553,FALSE
+Belize,BLZ,North America,4884.742421,FALSE
+Bermuda,BMU,North America,85748.06541,FALSE
+Bolivia,BOL,South America,3548.59014,FALSE
+Brazil,BRA,South America,8920.762105,FALSE
+Barbados,BRB,South America,17949.28151,FALSE
+Brunei Darussalam,BRN,Asia,31628.32879,FALSE
+Bhutan,BTN,Asia,3243.231125,FALSE
+Botswana,BWA,Africa,8258.641666,FALSE
+Canada,CAN,North America,46232.98962,TRUE
+Switzerland,CHE,Europe,82796.54716,TRUE
+Channel Islands,CHI,Europe,74462.64675,FALSE
+Chile,CHL,South America,15923.35874,TRUE
+China,CHN,Asia,9770.847088,FALSE
+Cote d'Ivoire,CIV,Africa,1715.531332,FALSE
+Cameroon,CMR,Africa,1533.74214,FALSE
+"Congo, Dem. Rep.",COD,Africa,561.7771824,FALSE
+"Congo, Rep.",COG,Africa,2147.769461,FALSE
+Colombia,COL,South America,6667.7907,TRUE
+Comoros,COM,Africa,1415.263622,FALSE
+Cabo Verde,CPV,Africa,3635.40685,FALSE
+Costa Rica,CRI,North America,12027.36588,FALSE
+Cuba,CUB,North America,8821.818891,FALSE
+Cyprus,CYP,Europe,28689.69858,FALSE
+Czech Republic,CZE,Europe,23078.57349,TRUE
+Germany,DEU,Europe,47603.02763,TRUE
+Djibouti,DJI,Africa,3082.543099,FALSE
+Denmark,DNK,Europe,61350.34791,TRUE
+Dominican Republic,DOM,North America,8050.631602,FALSE
+Algeria,DZA,Africa,4114.715061,FALSE
+Ecuador,ECU,South America,6344.871979,FALSE
+"Egypt, Arab Rep.",EGY,Africa,2549.132252,FALSE
+Eritrea,ERI,Africa,811.3760286,FALSE
+Spain,ESP,Europe,30370.89233,TRUE
+Estonia,EST,Europe,23266.34627,TRUE
+Ethiopia,ETH,Africa,772.3135303,FALSE
+Finland,FIN,Europe,50152.34014,TRUE
+Fiji,FJI,Oceania,6266.967965,FALSE
+France,FRA,Europe,41463.64402,TRUE
+Faroe Islands,FRO,Europe,55822.91472,FALSE
+"Micronesia, Fed. Sts.",FSM,Oceania,3568.290829,FALSE
+Gabon,GAB,Africa,7952.525893,FALSE
+United Kingdom,GBR,Europe,42943.90227,TRUE
+Georgia,GEO,Europe,4717.143026,FALSE
+Ghana,GHA,Africa,2202.312164,FALSE
+Guinea,GIN,Africa,878.5996133,FALSE
+"Gambia, The",GMB,Africa,716.118489,FALSE
+Guinea-Bissau,GNB,Africa,777.9699218,FALSE
+Greece,GRC,Europe,20324.25356,TRUE
+Grenada,GRD,South America,10640.49676,FALSE
+Guatemala,GTM,South America,4549.010081,FALSE
+Guam,GUM,Asia,35712.56214,FALSE
+Guyana,GUY,South America,4979.002188,FALSE
+Hong Kong,HKG,Asia,48675.61646,FALSE
+Honduras,HND,South America,2500.113213,FALSE
+Croatia,HRV,Europe,14909.69319,FALSE
+Haiti,HTI,South America,868.3420247,FALSE
+Hungary,HUN,Europe,16161.98051,TRUE
+Indonesia,IDN,Asia,3893.596078,FALSE
+India,IND,Middle East,2009.978857,FALSE
+Ireland,IRL,Europe,78806.432,TRUE
+Iran,IRN,Middle East,5627.749268,FALSE
+Iraq,IRQ,Africa,5834.166211,FALSE
+Iceland,ISL,Europe,73191.11632,TRUE
+Israel,ISR,Middle East,41715.02928,TRUE
+Italy,ITA,Europe,34483.204,TRUE
+Jamaica,JAM,Africa,5354.236859,FALSE
+Jordan,JOR,Africa,4241.788782,FALSE
+Japan,JPN,Asia,39289.95843,TRUE
+Kazakhstan,KAZ,Asia,9812.601137,FALSE
+Kenya,KEN,Africa,1710.510097,FALSE
+Kyrgyz Republic,KGZ,Asia,1281.363661,FALSE
+Cambodia,KHM,Asia,1510.324871,FALSE
+Kiribati,KIR,Oceania,1625.2861,FALSE
+"Korea, Rep.",KOR,Asia,31362.75147,TRUE
+Kuwait,KWT,Middle East,33994.40657,FALSE
+Laos,LAO,Asia,2542.486528,FALSE
+Lebanon,LBN,Middle East,8269.787676,FALSE
+Liberia,LBR,Africa,677.3221785,FALSE
+Libya,LBY,Africa,7241.704481,FALSE
+St. Lucia,LCA,South America,10566.04975,FALSE
+Liechtenstein,LIE,Europe,165028.245,FALSE
+Sri Lanka,LKA,Asia,4102.48135,FALSE
+Lesotho,LSO,Africa,1299.153126,FALSE
+Lithuania,LTU,Europe,19153.40899,TRUE
+Luxembourg,LUX,Europe,116639.888,TRUE
+Latvia,LVA,Europe,17860.6172,TRUE
+"Macao SAR, China",MAC,Asia,87208.53591,FALSE
+Morocco,MAR,Africa,3222.200634,FALSE
+Moldova,MDA,Europe,3227.312192,FALSE
+Madagascar,MDG,South America,527.501285,FALSE
+Maldives,MDV,Asia,10330.61561,FALSE
+Mexico,MEX,North America,9673.443674,TRUE
+North Macedonia,MKD,Europe,6083.718948,FALSE
+Mali,MLI,Africa,899.6599081,FALSE
+Malta,MLT,Europe,30098.28331,FALSE
+Myanmar,MMR,Asia,1325.952924,FALSE
+Montenegro,MNE,Europe,8844.236985,FALSE
+Mongolia,MNG,Asia,4121.732435,FALSE
+Mozambique,MOZ,Africa,498.9572202,FALSE
+Mauritania,MRT,Africa,1188.834588,FALSE
+Mauritius,MUS,Africa,11238.69039,FALSE
+Malawi,MWI,Africa,389.3980332,FALSE
+Malaysia,MYS,Asia,11373.233,FALSE
+Namibia,NAM,Africa,5931.453886,FALSE
+Niger,NER,Africa,413.980305,FALSE
+Nigeria,NGA,Africa,2028.18197,FALSE
+Nicaragua,NIC,South America,2028.894755,FALSE
+Netherlands,NLD,Europe,53024.05921,TRUE
+Norway,NOR,Europe,81697.24598,TRUE
+Nepal,NPL,Asia,1033.912431,FALSE
+New Zealand,NZL,Oceania,41945.33167,TRUE
+Oman,OMN,Middle East,16415.15728,FALSE
+Pakistan,PAK,Asia,1482.403063,FALSE
+Panama,PAN,South America,15575.07255,FALSE
+Peru,PER,South America,6941.235848,FALSE
+Philippines,PHL,Asia,3102.713363,FALSE
+Papua New Guinea,PNG,Oceania,2730.274799,FALSE
+Poland,POL,Europe,15420.91116,TRUE
+Puerto Rico,PRI,South America,31651.34815,FALSE
+Portugal,PRT,Europe,23407.90659,TRUE
+Paraguay,PRY,South America,5821.814323,FALSE
+Qatar,QAT,Middle East,68793.78444,FALSE
+Romania,ROU,Europe,12301.1864,FALSE
+Russian Federation,RUS,Europe,11288.88,FALSE
+Rwanda,RWA,Africa,772.9444599,FALSE
+Saudi Arabia,SAU,Middle East,23338.96346,FALSE
+Sudan,SDN,Africa,977.2736357,FALSE
+Senegal,SEN,Africa,1521.953554,FALSE
+Singapore,SGP,Asia,64581.94402,FALSE
+Solomon Islands,SLB,Oceania,2137.690695,FALSE
+Sierra Leone,SLE,Africa,533.9911843,FALSE
+El Salvador,SLV,South America,4058.252439,FALSE
+Somalia,SOM,Africa,314.5441657,FALSE
+Serbia,SRB,Europe,7246.731656,FALSE
+South Sudan,SSD,Africa,1119.651332,FALSE
+Suriname,SUR,South America,6234.044922,FALSE
+Slovak Republic,SVK,Europe,19442.70576,TRUE
+Slovenia,SVN,Europe,26123.97387,TRUE
+Sweden,SWE,Europe,54608.36025,TRUE
+Eswatini,SWZ,Africa,4145.974112,FALSE
+Seychelles,SYC,Africa,16433.93529,FALSE
+Chad,TCD,Africa,728.3432354,FALSE
+Togo,TGO,Africa,679.2570836,FALSE
+Thailand,THA,Asia,7273.563207,FALSE
+Tajikistan,TJK,Asia,826.6215305,FALSE
+Turkmenistan,TKM,Asia,6966.635411,FALSE
+Timor-Leste,TLS,Asia,2035.533908,FALSE
+Tonga,TON,Oceania,4364.015561,FALSE
+Tunisia,TUN,Africa,3447.50791,FALSE
+Turkey,TUR,Asia,9370.176344,TRUE
+Tanzania,TZA,Africa,1060.994615,FALSE
+Uganda,UGA,Africa,642.7767443,FALSE
+Ukraine,UKR,Asia,3095.173581,FALSE
+Uruguay,URY,Europe,17277.97011,FALSE
+United States,USA,North America,62794.58565,TRUE
+Uzbekistan,UZB,Asia,1532.371677,FALSE
+St. Vincent and the Grenadines,VCT,South America,7361.400962,FALSE
+Venezuela,VEN,South America,16054.49051,FALSE
+Virgin Islands (U.S.),VIR,North America,35938.02439,FALSE
+Vietnam,VNM,Asia,2566.59695,FALSE
+Vanuatu,VUT,Oceania,3123.893396,FALSE
+Samoa,WSM,Oceania,4183.407935,FALSE
+Kosovo,XKX,Europe,4302.276483,FALSE
+"Yemen, Rep.",YEM,Middle East,944.4084994,FALSE
+South Africa,ZAF,Africa,6374.028196,FALSE
+Zambia,ZMB,Africa,1539.900158,FALSE
+Zimbabwe,ZWE,Africa,2146.996385,FALSE
