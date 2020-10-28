@@ -10,7 +10,7 @@ library(rJava)
 library(KoNLP)
 
 devtools::install_github('haven-jeon/NIADic/NIADic', build_vignettes=TRUE)
-buildDictionary(ext_dic = "woorimalsam") # "woorimalsam" dic을 불러옵니다
+buildDictionary(ext_dic = "woorimalsam")
 
 useNIADic()
 
