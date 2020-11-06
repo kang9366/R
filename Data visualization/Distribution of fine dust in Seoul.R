@@ -1,0 +1,79 @@
+### library install and load
+if(!require(ggplot2)){install.packages("ggplot2")}
+if(!require(gganimate)){install.packages("gganimate")}
+if(!require(gapminder)){install.packages("gapminder")}
+if(!require(tidyverse)){install.packages("tidyverse")}
+if(!require(readxl)){install.packages("readxl")}
+if(!require(dplyr)){install.packages("dplyr")}
+
+library(ggplot2)
+library(gganimate)
+library(gapminder)
+library(tidyverse)
+library(readxl)
+library(dplyr)
+library(RColorBrewer)
+
+### data processing
+data <- read_xlsx("seoul-pollution.xlsx")
+
+names(data)[1] <- 'date'
+names(data)[3] <- 'name'
+names(data)[4] <- 'dust'
+
+gu <- data %>% 
+  arrange(name)
+
+state <- gu$name %>% 
+  as.factor() %>% 
+  levels()
+
+date <- gu$date %>% 
+  as.factor() %>% 
+  levels()
+
+for(i in 1:ncol(gu)){
+  print(sum(is.na(gu[i])))
+}
+
+### Set theme
+my_font <- 'Quicksand Light'
+my_background <- 'antiquewhite'
+my_pal <- c('#F8AFA8','#74A089') #colors for bars (from wesanderson)
+my_theme <- theme(text = element_text(family = my_font),
+                  rect = element_rect(fill = my_background),
+                  plot.background = element_rect(fill = my_background, color = NA),
+                  panel.background = element_rect(fill = my_background, color = NA),
+                  panel.border = element_blank(),
+                  plot.title = element_text(face = 'bold', size = 22, vjust = 1),
+                  plot.subtitle = element_text(size = 16),
+                  panel.grid.major.y = element_blank(),
+                  panel.grid.minor.y = element_blank(),
+                  panel.grid.major.x = element_line(color = 'grey75'),
+                  panel.grid.minor.x = element_line(color = 'grey75'),
+                  legend.position = 'none',
+                  axis.ticks = element_blank(),
+                  axis.text.y =  element_blank(),
+                  plot.margin = margin(1,1,1,2, "cm"))
+
+theme_set(theme_light() + my_theme)
+
+### Visualization
+g1 <- ggplot(gu, aes(x=name, y=dust, fill=name)) + 
+  geom_bar(stat='identity')
+
+g2 <- g1 + 
+  scale_color_brewer(palette = "PiYG") +
+  coord_flip(clip = "off", expand = FALSE)
+
+g3 <- g2 +
+  labs(title= '{closest_state}', x = "", y = '구 별 미세먼지 수치 (단위 : ㎍/㎥)') +
+  geom_text(aes(y=0, label = paste(name, " ")), vjust = 0.2, hjust = 1) +
+  geom_text(aes(y=dust,label = as.character(dust), hjust=0))
+
+g4 <- g3 +
+  transition_states(date, transition_length = 4, state_length = 1) +
+  ease_aes('cubic-in-out')
+
+animate(g4, 365, fps = 10, duration = 30, width = 1200, height = 800, 
+        renderer = gifski_renderer("서울시 미세먼지 시각화.gif"))
