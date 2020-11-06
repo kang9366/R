@@ -1,0 +1,62 @@
+---
+title: "텍스트마이닝1"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+if(!require(rvest)){install.packages("rvest")}
+
+library(rvest)
+```
+
+### 데이터 크롤링
+```{r}
+base_url <- "https://movie.naver.com/movie/point/af/list.nhn?st=mcode&sword=60484&target=after&page="
+reviews <- c()
+
+for(i in 1:646){
+  url <- paste(base_url, i, sep = "")
+  html <- read_html(url, encoding = 'CP949')
+  table <- html_nodes(html, '.list_netizen')
+  text <- html_nodes(table, '.title')
+  review <- html_text(text)
+  reviews <- c(reviews, review)
+}
+
+review_text <- c()
+for(i in 1:length(reviews)){
+  temp <- strsplit(reviews[i], "중")[[1]][2]
+  if(substr(temp, 1,2) == "10"){
+    review <- substr(temp, 11, nchar(temp)-47)
+  }else{
+    review <- substr(temp, 10, nchar(temp)-47)
+  }
+  review_text <- c(review_text, review)
+}
+
+review_text <- review_text[-which(nchar(review_text) == 0)]
+review_text <- review_text[order(nchar(review_text), decreasing = TRUE)]
+movie <- review_text[1:100]
+write.table(movie, "movie.txt")
+```
+
+### 워드클라우드 만들기
+```{r}
+if(!require(wordcloud2)){install.packages("wordcloud2")}
+library(wordcloud2)
+library(rJava)
+library(KoNLP)
+useNIADic()
+```
+
+```{r}
+movie <- read.table("movie.txt", encoding = 'CP949')
+movie <- unlist(movie)
+movie <- c(movie$x)
+str(movie)
+extractNoun(movie)
+```

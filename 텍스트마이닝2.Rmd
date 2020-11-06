@@ -1,0 +1,36 @@
+---
+title: "텍스트마이닝 2번"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(readxl)
+library(dplyr)
+library(knitr)
+```
+
+
+```{r}
+data <- read_xlsx("seoul.xlsx")
+
+name <- data$업소명
+
+food <- grep("분식", name, value = TRUE)
+num <- grep("\\d", name, value = TRUE)
+hair <- grep("헤어", name, value = TRUE)
+salon <- grep("미용실", name, value = TRUE)
+
+kable(food)
+kable(num)
+kable(hair)
+kable(salon)
+
+length(food)
+length(num)
+length(hair)
+length(salon)
+```
