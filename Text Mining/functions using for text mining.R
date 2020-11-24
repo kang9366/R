@@ -52,3 +52,43 @@ n <- as.numeric(n)
 df <- data.frame(brand, n)
 install.packages("wordcloud")
 
+country <- dget("country.txt")
+
+grep("Korea", country, value=T)
+grep("ee", country, value=T)
+grep("'", country, value=T)
+grep("Rep", country, value=T)
+grep(" ", country, value=T)
+country[nchar(country) == 7]
+grep("^Co", country, value=T)
+grep("land$", country, value=T)
+
+strings <- c("abcd", "cdab", "cabd", "c abd", "^ab")
+grep("ab", strings, value=T)
+
+#ab로 시작하는 벡터 찾기
+grep("^ab", strings, value=T) 
+
+#ab로 끝나는 벡터찾기
+grep("ab$", strings, value=T) 
+grep("ab[c-e]", strings, value=T)
+grep("ab[^c]", strings, value=T)
+
+#^ 찾기 (\\을 붙이면 됨)
+grep("\\^ab", strings, value=T) 
+grep("^ab", strings, value=T, fixed = T)
+
+# abc, abd찾기
+grep("abc|abd", strings, value=T) 
+
+# ab뒤에 공백이나 문자가 1개 이상
+grep("ab.", strings, value=T) 
+
+# ab뒤에 공백이나 문자가 0개 이상
+grep("ab*", strings, value=T) 
+
+id <- "kang9366@naver.com"
+name <- strsplit("@", id)
+sub("p", "*", "apple")
+gsub("p", "*", "apple")
+
