@@ -38,43 +38,45 @@ View(data_a)
 dat <- seoul
 dat <- subset(dat, 분류코드=="001" | 분류코드=="002" |분류코드=="003")
 info <- dat$업소정보
-View(info)
 info %<>% 
   gsub("\r", "", .) %>%
   gsub("\n", "", .) %>%
+  gsub("t", "", .) %>% 
   gsub(" ", "", ., fixed=TRUE)
 
 sum(is.na(info))
 info %<>% na.omit(.)
-View(info)
+
 temp <- c()
 for(i in 1:length(info)){
   if(info[i] == "." | info[i] == "null"){
     temp %<>% c(., i)
   }
 }
-
 info <- info[-temp]
 
 substract <- function(x, y){
+  y <- c()
   for(i in 1:length(x)){
-    y <- c(y, x[[i]][1])
+    y %<>% c(., x[[i]][1])
+  }
+  return (y)
+}
+
+info <- substract(strsplit(info ,"좌석수"), temp) 
+info <- substract(strsplit(info, "휴무일"), temp)
+info <- substract(strsplit(info, "예약"), temp)
+info <- substract(strsplit(info, "배달"), temp)
+info <- substract(strsplit(info, "휴무"), temp)
+info <- substract(strsplit(info, "기타"), temp)
+info <- substract(strsplit(info, "휴무"), temp)
+info %<>% gsub("영업시간:", "", .) 
+
+temp <- c()
+for(i in 1:length(info)){
+  if(info[i] == ""){
+    temp %<>% c(.,i)
   }
 }
-temp <- c()
-substract(info, temp)
 
-
-info %<>% strsplit(., "좌석수")
-for(i in 1:length(info1)){
-  info %<>%  c(info2, info1[[i]][1])
-}
-
-info3 <- info2 %>% 
-  strsplit("휴무일")
-
-info4 <- c()
-for(i in 1:length(info3)){
-  info4 <- c(info4, info3[[i]][1])
-}
-
+info <- info[-temp]
