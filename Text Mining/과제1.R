@@ -64,7 +64,7 @@ substract <- function(x, y){
   }
   return (y)
 }
-View(info)
+
 info <- substract(strsplit(info ,"좌석수"), temp) 
 info <- substract(strsplit(info, "휴무"), temp)
 info <- substract(strsplit(info, "예약"), temp)

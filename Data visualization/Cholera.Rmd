@@ -1,3 +1,15 @@
+---
+title: "Untitled"
+author: "20173201 강승구"
+date: '2020 11 26 '
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r cars}
 library(HistData)
 library(ggplot2)
 library(magrittr)
@@ -5,13 +17,16 @@ library(dplyr)
 library(RColorBrewer)
 library(gridExtra)
 library(ggmap)
+```
 
-
-#Cholera$district %<>% as.factor(.)
-#Cholera$region %<>% as.factor(.)
+```{r}
 str(Cholera)
+Cholera$district %<>% as.factor(.)
+Cholera$region %<>% as.factor(.)
+Cholera$water %<>% as.factor(.)
 
 state <- levels(Cholera$region)
+river <- levels(Cholera$water)
 
 west <- Cholera %>% 
   filter(region==state[1])
@@ -43,19 +58,13 @@ sum_k <- sum(kent$cholera_deaths)
 sum_pk <- sum(kent$poor_rate)
 mean_hpk <- mean(kent$house_val)
 
-Cholera <- data.frame(region=as.factor(state), 
+Cholera <- data.frame(region=state, 
                       death=c(sum_w, sum_n, sum_c, sum_s, sum_k), 
                       poor.rate = c(sum_pw, sum_pn, sum_pc, sum_ps, sum_pk),
                       mean.housePrice = c(mean_hpw, mean_hpn, mean_hpc, mean_hps, mean_hpk))
+```
 
-g1 <- ggplot(Cholera, aes(region,death,fill=region)) + 
-  geom_bar(stat="identity")
-g2 <- ggplot(Cholera, aes(region, poor.rate, fill=region)) + 
-  geom_bar(stat = "identity") + 
-  theme(legend.position = "none")
-grid.arrange(g1, g2, nrow=1, ncol=2)
-
-
+```{r}
 coordinate_hp <- function(i){
   x <- Cholera$mean.housePrice[i]
   y <- Cholera$poor.rate[i] + 0.05
@@ -64,6 +73,7 @@ coordinate_hp <- function(i){
   }  
   return(c(x,y))
 }
+
 coordinate_d <- function(i){
   x <- Cholera$death[i]
   y <- Cholera$poor.rate[i] + 0.05
@@ -98,11 +108,25 @@ text(coordinate_d(4)[1], coordinate_d(4)[2], label = "South", cex=0.8)
 text(coordinate_d(5)[1], coordinate_d(5)[2], label = "Kent", cex=0.8)
 #abline(v=mean(Cholera$death), lty=4)
 #abline(h=mean(Cholera$poor.rate), lty=4)
+```
 
+```{r}
+g1 <- ggplot(Cholera, aes(region,death,fill=region)) + 
+  geom_bar(stat="identity")
+
+g2 <- ggplot(Cholera, aes(region, poor.rate, fill=region)) + 
+  geom_bar(stat = "identity") + 
+  theme(legend.position = "none")
+
+grid.arrange(g1, g2, nrow=1, ncol=2)
+```
+
+```{r}
 ggplot(HistData::Cholera, aes(x=cholera_drate, y=poor_rate, color=region)) + 
   geom_point(size=4)#, pch=c(0, 2, 4, 8, 10)[HistData::Cholera$region])
+```
 
-
+```{r}
 proportion <- Cholera %>% 
   arrange(desc(region)) %>%
   mutate(prop = death / sum(Cholera$death) *100) %>%
@@ -114,4 +138,4 @@ ggplot(proportion, aes(x="", y=prop, fill=region)) +
   theme_void()+
   labs(fill="") + 
   geom_text(aes(y=ypos, label=paste0(round(prop, digit=2), "%", "\n", "(", death, "명)")))
-
+```

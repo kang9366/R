@@ -27,12 +27,10 @@ cor(diamonds$price, diamonds$carat)
 text(5000, 3, "cor = 0.9282161")
 
 col_cut <- c("red", "skyblue", "black", "green", "yellow")
-
 col_col <- c("red", "skyblue", "black", "green", "yellow", "purple", "pink")
-
 col_cty <- c("red", "skyblue", "black", "green", "yellow", "purple", "pink", "gray")
-col_cty <- col_cty[as.numeric(diamonds$clarity)]
 
+col_cty <- col_cty[as.numeric(diamonds$clarity)]
 col_col <- col_col[as.numeric(diamonds$colour)]
 col_cut <- col_cut[as.numeric(diamonds$cut)]
 
