@@ -150,7 +150,6 @@ g2 <- ggplot(Cholera, aes(region, poor.rate, fill=region)) +
 grid.arrange(g1, g2, nrow=1, ncol=2)
 ```
 
-
 ### 산점도
 ```{r}
 ggplot(HistData::Cholera, aes(x=cholera_drate, y=poor_rate, color=region)) + 
