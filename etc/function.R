@@ -55,15 +55,74 @@ my.moment <- function(x){
   dat_sum <- sum(x)
   dat_mean <- mean(x)
   dat_var <- sum((x-mean(x))^2) / (length(x)-1)
-  a <- c()
-  b <- c()
-  for(i in 1:length(x)){
-    a <- c(a, (x[i]-mean(x))^3)
-    b <- c(b, (x[i]-mean(x))^2)
-  }
-  dat_ske <- sum(a)/(sum(b))^(3/2)
   
+  sum1<-sum((x-mean(x))^3)
+  sum2<-sum((x-mean(x))^2)
+  dat_skew<-(sqrt(length(x))*sum1)/(sum2^(3/2))
+  
+  sum3<-sum((x-mean(x))^4)
+  sum4<-sum((x-mean(x))^2)
+  dat_kurtosis<-((sum3/length(x))/((sum4/length(x))^2))-3
+  
+  cat("합계 : ", dat_sum, "\n")
+  cat("평균 : ", dat_mean, "\n")
+  cat("분산 : ", dat_var, "\n")
+  cat("왜도 : ", dat_skew, "\n")
+  cat("첨도 : ", dat_kurtosis)
 }
 
-my.moment(c(1, 2, 3, 4))
+#####b
+my.moment.for <- function(x){
+  dat_sum <- 0
+  for(i in 1:length(x)){
+    dat_sum <- dat_sum + x[i]
+  }
+  
+  dat_mean <- dat_sum / length(x)
+  
+  temp_1 <- c()
+  for(i in 1:length(x)){
+    temp_1 <- c(temp_1, (x[i]-dat_mean)^2)
+  }
+  
+  temp_2 <- 0
+  for(i in 1:length(temp_1)){
+    temp_2 <- temp_2 + temp_1[i]
+  }
+  dat_var <- temp_2 / (length(x)-1)
+  
+  temp_3 <- c()
+  for(i in 1:length(x)){
+    temp_3 <- c(temp_3, x[i]-dat_mean)
+  }
+  
+  temp_4 <- 0
+  for(i in 1:length(x)){
+    temp_4 <- temp_4 + temp_3[i]^3
+  }
+  temp_5 <- 0
+  for(i in 1:length(x)){
+    temp_5 <- temp_5 + temp_3[i]^2
+  }
+  dat_skew <- (sqrt(length(x))*temp_4)/(temp_5^(3/2))
+  
+  temp_6 <- 0
+  for(i in 1:length(x)){
+    temp_6 <- temp_6 + temp_3[i]^4
+  }
+  temp_7 <- 0
+  for(i in 1:length(x)){
+    temp_7 <- temp_7 + temp_3[i]^2
+  }
+  dat_kurtosis<-((temp_6/length(x))/((temp_7/length(x))^2))-3
+  
+  cat("합계 : ", dat_sum, "\n")
+  cat("평균 : ", dat_mean, "\n")
+  cat("분산 : ", dat_var, "\n")
+  cat("왜도 : ", dat_skew, "\n")
+  cat("첨도 : ", dat_kurtosis)
+}
 
+data <- c(159, 280, 101, 121, 224, 222, 379, 179, 250, 170)
+my.moment.for(data)
+my.moment(data)
