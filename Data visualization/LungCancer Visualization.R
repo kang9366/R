@@ -165,4 +165,3 @@ g <- ggplot() +
   scale_y_continuous(breaks=seq(1, 12, 2))
 
 ggplotly(g)
-

@@ -1,5 +1,6 @@
 install.packages("PerformanceAnalytics")
 install.packages("corrplot")
+
 library(PerformanceAnalytics)
 library(corrplot)
 
@@ -31,3 +32,8 @@ pairs(aq2, panel = panel.smooth)
 chart.Correlation(aq2, histogram = TRUE, pch = 19)
 
 corrplot(aq.cor, method = "number")
+
+summary(aq2$Ozone)
+summary(aq2$Solar.R)
+summary(aq2$Wind)
+summarry(aq2$Temp)

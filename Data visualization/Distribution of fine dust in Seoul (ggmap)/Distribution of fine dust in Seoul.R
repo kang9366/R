@@ -16,7 +16,7 @@ library(dplyr)
 library(readxl)
 
 ### load location data
-map <- shapefile("./shp/TL_SCCO_SIG.shp")
+map <- shapefile("./data/TL_SCCO_SIG.shp")
 
 # convert location data to coordinates data
 map <- spTransform(map, CRSobj = CRS('+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs'))
@@ -42,7 +42,6 @@ map_data <- map_data %>%
   dplyr::select(SIG_CD)
 
 ### processing fine dust data
-```{r}
 data <- read_xlsx("seoul-pollution.xlsx")
 names(data)[3] <- 'name'
 names(data)[4] <- 'finedust'
@@ -80,9 +79,9 @@ g1 <- ggplot(data, aes(x=long, y=lat, group=group, fill = mean_finedust)) +
   labs(title = "서울시 초미세먼지", x = "", y = "") + 
   labs(fill = "초미세먼지(㎍/㎥)") + 
   theme_void() + 
-  theme(plot.title = element_text(hjust = 0.5, size = 20, face = "bold")) +
+  theme(plot.title = element_text(hjust = 0.5, size = 20, face = "bold"))
   
-  g2 <- g1 + 
+g2 <- g1 + 
   geom_text(x = 126.976, y = 37.586, label = "종로구", size = 3) +
   geom_text(x = 127.02, y = 37.6, label = "성북구", size = 3) +
   geom_text(x = 127.0106, y = 37.64, label = "강북구", size = 3) +

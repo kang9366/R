@@ -4,8 +4,6 @@ library(magrittr)
 library(dplyr)
 library(RColorBrewer)
 library(gridExtra)
-library(ggmap)
-
 
 #Cholera$district %<>% as.factor(.)
 #Cholera$region %<>% as.factor(.)
@@ -102,11 +100,10 @@ text(coordinate_d(5)[1], coordinate_d(5)[2], label = "Kent", cex=0.8)
 ggplot(HistData::Cholera, aes(x=cholera_drate, y=poor_rate, color=region)) + 
   geom_point(size=4)#, pch=c(0, 2, 4, 8, 10)[HistData::Cholera$region])
 
-
 proportion <- Cholera %>% 
   arrange(desc(region)) %>%
   mutate(prop = death / sum(Cholera$death) *100) %>%
-  mutate(ypos = cumsum(prop)- 0.5*prop )
+  mutate(ypos = cumsum(prop)- 0.5*prop)
 
 ggplot(proportion, aes(x="", y=prop, fill=region)) + 
   geom_bar(stat="identity", width=1) +

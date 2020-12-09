@@ -50,4 +50,3 @@ barplot(data$cbi.lease, names=data$date, ylim=c(0,100000), main="cbi lease", col
 par(mfrow=c(1,2))
 barplot(data$dc.sold, names=data$date, ylim=c(0,80000), main="dc sold", col = "red")
 barplot(data$dc.lease, names=data$date, ylim=c(0,80000), main="dc lease", col = "blue")
-

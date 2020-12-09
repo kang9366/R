@@ -1,0 +1,58 @@
+---
+title: "Untitled"
+output: html_document
+---
+```{r setup}
+library(magrittr)
+library(dplyr)
+
+data <- read.csv("./data/101_DT_COVID19_005_D_20201207183431.csv", fileEncoding="CP949", header = T)
+
+date <- colnames(data)
+date <- date[5:length(date)] %>% 
+  gsub("X", "", .) %>% 
+  gsub("\\..", "-", .)
+
+temp_1 <- c()
+temp_2 <- c()
+for(i in 5:ncol(data)){
+  if(is.na(data[3,i])){
+    temp_1 <- c(temp_1, 0)
+  }else{
+    temp_1 <- c(temp_1, data[3, i])
+  }
+}
+
+month <- c()
+for(i in 1:length(date)){
+  month <- c(month, strsplit(date[i], "-")[[1]][2])
+}
+
+
+data <- data.frame(date = date,
+                   month = factor(month),
+                   num = temp_1,
+                   cumsum = cumsum(temp_1))
+data <- data[-nrow(data),]
+data$date %<>% 
+  gsub("X", "", .) %>% 
+  gsub("\\..", "-", .)
+
+#3
+plot(data$num, main = "일별 코로나 확진자 수",
+        ylab = "확진자 수", xlab = "날짜", col = "blue", type="l")
+
+#4
+data2 <- data %>% 
+  group_by(month) %>% 
+  summarise(sum_month = sum(num)) %>% 
+  as.data.frame()
+barplot(data2$sum_month, names.arg = data2$month, main = "월 별 확진자 수", ylab = "확진자 수", xlab = "월", col = "skyblue")
+
+#5
+plot(data$cumsum, type = "l", main = "누적 코로나 확진자 수", ylab = "확진자 수", xlab = "날짜")
+
+#6
+plot(data2$sum_month ~ data2$month)
+
+```
