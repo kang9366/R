@@ -26,7 +26,7 @@ src_dir = "/Users/kangseunggu/Desktop/R/Text Mining/data"
 setwd(src_dir)
 src_file <- list.files(src_dir)
 
-data <- c(read(src_file[1]), read(src_file[2]), read(src_file[3]), read(src_file[4]), read(src_file[5]))
+data <- c(read(src_file[2]), read(src_file[3]), read(src_file[4]), read(src_file[5]), read(src_file[6]))
 
 tdm <- data %>% 
   VectorSource() %>% 

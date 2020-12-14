@@ -32,6 +32,8 @@ reviews <- reviews[-which(nchar(reviews) == 0)]
 reviews <- reviews[order(nchar(reviews), decreasing = TRUE)]
 reviews <- reviews[1:20]
 
+reviews %<>%
+  gsub("신고", "", .)
 positive <- readLines("./data/positive.txt", encoding="UTF-8")
 positive <- positive[-1]
 negative <- readLines("./data/negative.txt", encoding="UTF-8")

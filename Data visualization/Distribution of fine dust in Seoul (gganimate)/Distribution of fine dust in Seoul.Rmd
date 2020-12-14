@@ -9,7 +9,6 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ### 라이브러리 설치 및 불러오기
 ```{r, message=FALSE}
-
 if(!require(ggplot2)){install.packages("ggplot2")}
 if(!require(gganimate)){install.packages("gganimate")}
 if(!require(gapminder)){install.packages("gapminder")}
@@ -24,13 +23,6 @@ library(tidyverse)
 library(readxl)
 library(dplyr)
 library(RColorBrewer)
-
-```
-
-
-```{r}
-
-
 ```
 
 ### 데이터 전처리
